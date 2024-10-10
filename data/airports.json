@@ -1,0 +1,12 @@
+{
+    "data": [
+      { "iata_code": "", "airport_name": "Vinukonda", "country_iso2": "IN" },
+      
+      { "iata_code": "", "airport_name": "Guntur", "country_iso2": "IN" },
+      { "iata_code": "", "airport_name": "Narasarao pet", "country_iso2": "IN" },
+      { "iata_code": "", "airport_name": "Tenali", "country_iso2": "IN" },
+      
+      { "iata_code": "", "airport_name": "Vignan", "country_iso2": "IN" }
+    ]
+  }
+  

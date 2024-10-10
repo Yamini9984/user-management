@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation - Navigation Menu</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #ff4d4d;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff4d4d;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Blood Donation</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/aboutus">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+
+        <!-- Links shown based on user login status -->
+        <!-- When userId is not defined (not logged in) -->
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+
+        <!-- When userId is defined (logged in) -->
+        <!-- Uncomment these two lines if the user is logged in -->
+        <!-- <li><a href="/user/dashboard">Dashboard</a></li>
+        <li><a href="/user/logout">LogOut</a></li> -->
+    </ul>
+</nav>
+
+</body>
+</html>

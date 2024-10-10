@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Details</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        h1, h2, p {
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .flight-details {
+            width: 80%;
+            margin: 2rem auto;
+        }
+
+        .flight-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .flight-card {
+            width: 300px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .flight-header {
+            background-color: #ff6666;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+        }
+
+        .flight-body {
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .flight-footer {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .flight-footer a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .flight-footer a:hover {
+            background-color: #0056b3;
+        }
+
+        .no-slot {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .no-slot strong {
+            font-weight: bold;
+        }
+
+        .back-to-search {
+            display: block;
+            text-align: center;
+            margin: 2rem auto;
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .back-to-search:hover {
+            background-color: #555;
+        }
+    </style>
+    <header>
+        <h1>Air Ticket Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+</head>
+<body>
+    <section class="flight-details">
+        <h1>Blood Donation Information</h1>
+
+        <div class="flight-card-container">
+            <!-- Repeat this block for each donation slot found -->
+            <div class="flight-card">
+                <div class="flight-header">
+                    <h2>Number: 12345</h2>
+                    <p>Name: Donation Center XYZ</p>
+                    <p>Donation Duration: Center A to Center B</p>
+                </div>
+                <div class="flight-body">
+                    <p>Departure: 10:00 AM</p>
+                    <p>Arrival: 12:00 PM</p>
+                    <p>Price: $50</p>
+                </div>
+                <div class="flight-footer">
+                    <a href="/login">Book</a>
+                </div>
+            </div>
+            <!-- Add more .flight-card blocks as needed -->
+
+            <!-- No slot found block -->
+            <div class="flight-card no-slot">
+                <h2>No Slot Found</h2>
+                <p>Sorry, no slot match your search for <strong>Location A</strong> to <strong>Location B</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Back to Search Button -->
+        <a href="/" class="back-to-search">Back to Search</a>
+    </section>
+</body>
+</html>

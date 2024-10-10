@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function openOverlay() {
+            document.getElementById("editProfileOverlay").style.display = "block";
+        }
+
+        function closeOverlay() {
+            document.getElementById("editProfileOverlay").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="main-content">
+        <h1>My Profile</h1>
+        <div class="profile-info">
+            <p>First Name: John</p> <!-- Replace 'John' dynamically with user.first_name -->
+            <p>Last Name: Doe</p> <!-- Replace 'Doe' dynamically with user.last_name -->
+            <p>Email: john.doe@example.com</p> <!-- Replace with user.email -->
+            <p>Phone: +1234567890</p> <!-- Replace with user.phone -->
+            <button class="edit-btn" onclick="openOverlay()">Edit Profile</button>
+        </div>
+
+        <!-- Overlay for editing profile -->
+        <div class="overlay" id="editProfileOverlay" style="display:none;">
+            <div class="overlay-content registration-section">
+                <span class="close-btn" onclick="closeOverlay()">&times;</span>
+                <h2>Edit Profile</h2>
+                <form class="registration-form" action="/user/edit-profile" method="POST">
+                    <input type="text" name="first_name" placeholder="First Name" value="John" required> <!-- Replace 'John' dynamically with user.first_name -->
+                    <input type="text" name="last_name" placeholder="Last Name" value="Doe" required> <!-- Replace 'Doe' dynamically with user.last_name -->
+                    <input type="email" name="email" placeholder="Email" value="john.doe@example.com" required> <!-- Replace with user.email -->
+                    <input type="tel" name="phone" placeholder="Phone Number" value="+1234567890" required> <!-- Replace with user.phone -->
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Include footer content here -->
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

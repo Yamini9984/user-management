@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Air Ticket Booking</title>
+    <link rel="stylesheet" href="/assets/css/styles.css"> <!-- Adjust the path if necessary -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Air Ticket Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="login-section">
+        <h2>Login</h2>
+        <form class="login-form" action="/user/login" method="post">
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="password" name="password" placeholder="Your Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Links for forgotten credentials -->
+        <div class="forgot-credentials">
+            <a href="/forgot-password">Forgot Password?</a>
+            <a href="/forgot-username">Forgot Username?</a>
+        </div>
+
+        <!-- Social media login options -->
+        <div class="social-login">
+            <h3>Or login with</h3>
+            <a href="#" class="facebook-login"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="google-login"><i class="fab fa-google"></i></a>
+            <a href="#" class="twitter-login"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <!-- Display error message -->
+        <span class="error-message" style="color: red;"></span>
+
+        <!-- Display success message -->
+        <span class="success-message" style="color: green;"></span>
+    </section>
+
+    <script src="/assets/js/scripts.js"></script> <!-- Optional: Add any scripts if needed -->
+
+    <script>
+        const form = document.querySelector('.login-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            const formData = new FormData(form);
+            const data = new URLSearchParams(formData).toString();
+    
+            fetch('/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: data,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Login failed');
+                }
+                return response.text(); // Or response.json() depending on your server response
+            })
+            .then(data => {
+                document.querySelector('.success-message').textContent = data; // Display success message
+                document.querySelector('.error-message').textContent = ''; // Clear any error messages
+            })
+            .catch(error => {
+                document.querySelector('.error-message').textContent = error.message; // Display error message
+                document.querySelector('.success-message').textContent = ''; // Clear any success messages
+            });
+        });
+    </script>
+    

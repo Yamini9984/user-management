@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    <h1>Error <span id="statusCode"></span></h1>
+    <p id="message">Something went wrong. Please try again later.</p>
+    <a href="/">Go back to home</a>
+
+    <script>
+        // If you want to display dynamic error messages, you could use a query parameter
+        const params = new URLSearchParams(window.location.search);
+        const statusCode = params.get('statusCode');
+        const message = params.get('message');
+        
+        if (statusCode) {
+            document.getElementById('statusCode').textContent = statusCode;
+        }
+        if (message) {
+            document.getElementById('message').textContent = message;
+        }
+    </script>
+</body>
+</html>
